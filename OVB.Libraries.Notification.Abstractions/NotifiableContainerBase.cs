@@ -2,7 +2,6 @@
 
 namespace OVB.Libraries.Notification.Abstractions;
 
-
 public abstract class NotifiableContainerBase<NotificationItemAbstraction> where NotificationItemAbstraction : NotificationItemBase
 {
     public List<NotificationItemAbstraction> NotificationItems { get; init; }

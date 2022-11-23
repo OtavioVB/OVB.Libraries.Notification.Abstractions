@@ -23,3 +23,5 @@ public abstract class NotificationPublisherBase<NotificationItemAbstraction, Not
         Notifiable.AddNotifications(notificationItems);
     }
 }
+
+
