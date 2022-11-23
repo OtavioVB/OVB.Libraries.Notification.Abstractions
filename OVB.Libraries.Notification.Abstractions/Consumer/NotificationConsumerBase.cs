@@ -2,9 +2,8 @@
 
 namespace OVB.Libraries.Notification.Abstractions.Consumer;
 
-public abstract class NotificationConsumerBase<NotificationItemAbstraction, NotifiableContainerAbstraction>
-    where NotifiableContainerAbstraction : NotifiableContainerBase<NotificationItemAbstraction>
-    where NotificationItemAbstraction : NotificationItemBase
+public abstract class NotificationConsumerBase<NotifiableContainerAbstraction>
+    where NotifiableContainerAbstraction : NotifiableContainerBase
 {
     private NotifiableContainerAbstraction Notifiable { get; init; }
 
@@ -13,7 +12,7 @@ public abstract class NotificationConsumerBase<NotificationItemAbstraction, Noti
         Notifiable = notifiableContainer;
     }
 
-    public List<NotificationItemAbstraction> GetNotificationItems()
+    public List<NotificationItemBase> GetNotificationItems()
     {
         return Notifiable.NotificationItems;
     }

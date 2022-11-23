@@ -2,9 +2,8 @@
 
 namespace OVB.Libraries.Notification.Abstractions.Publisher;
 
-public abstract class NotificationPublisherBase<NotificationItemAbstraction, NotifiableContainerAbstraction>
-    where NotificationItemAbstraction : NotificationItemBase
-    where NotifiableContainerAbstraction : NotifiableContainerBase<NotificationItemAbstraction>
+public abstract class NotificationPublisherBase<NotifiableContainerAbstraction>
+    where NotifiableContainerAbstraction : NotifiableContainerBase
 {
     private NotifiableContainerAbstraction Notifiable { get; init; }
 
@@ -13,12 +12,12 @@ public abstract class NotificationPublisherBase<NotificationItemAbstraction, Not
         Notifiable = notifiable;
     }
 
-    public void AddNotification(NotificationItemAbstraction notificationItem)
+    public void AddNotification(NotificationItemBase notificationItem)
     {
         Notifiable.AddNotification(notificationItem);
     }
 
-    public void AddNotifications(List<NotificationItemAbstraction> notificationItems)
+    public void AddNotifications(List<NotificationItemBase> notificationItems)
     {
         Notifiable.AddNotifications(notificationItems);
     }
