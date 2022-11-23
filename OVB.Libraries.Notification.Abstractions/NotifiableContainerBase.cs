@@ -6,9 +6,9 @@ public abstract class NotifiableContainerBase
 {
     public List<NotificationItemBase> NotificationItems { get; init; }
 
-    protected NotifiableContainerBase(List<NotificationItemBase> notificationItems)
+    protected NotifiableContainerBase()
     {
-        NotificationItems = notificationItems;
+        NotificationItems = new List<NotificationItemBase>();
     }
 
     public virtual void AddNotification(NotificationItemBase notification)

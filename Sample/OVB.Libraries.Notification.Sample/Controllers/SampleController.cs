@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using OVB.Libraries.Notification.Abstractions;
 using OVB.Libraries.Notification.Abstractions.Consumer;
 using OVB.Libraries.Notification.Abstractions.Publisher;
 using OVB.Libraries.Notification.Sample.Models;
@@ -11,8 +12,8 @@ namespace OVB.Libraries.Notification.Sample.Controllers
     {
         [HttpGet]
         public IActionResult Get(
-            [FromServices] NotificationPublisherBase<NotificationContainer> publisherNotification,
-            [FromServices] NotificationConsumerBase<NotificationContainer> consumerNotification)
+            [FromServices] NotificationPublisherBase<NotifiableContainerBase> publisherNotification,
+            [FromServices] NotificationConsumerBase<NotifiableContainerBase> consumerNotification)
         {
             publisherNotification.AddNotification(new NotificationItem("Notificação 1."));
             publisherNotification.AddNotification(new NotificationItem("Notificação 2."));

@@ -1,6 +1,5 @@
 using OVB.Libraries.Notification.Abstractions;
 using OVB.Libraries.Notification.Abstractions.Consumer;
-using OVB.Libraries.Notification.Abstractions.Item;
 using OVB.Libraries.Notification.Abstractions.Publisher;
 using OVB.Libraries.Notification.Sample.Models;
 
@@ -13,8 +12,8 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddScoped<NotifiableContainerBase, NotificationContainer>();
-        builder.Services.AddTransient<NotificationConsumerBase<NotificationContainer>, NotificationConsumer>();
-        builder.Services.AddTransient<NotificationPublisherBase<NotificationContainer>, NotificationPublisher>();
+        builder.Services.AddTransient<NotificationConsumerBase<NotifiableContainerBase>, NotificationConsumer>();
+        builder.Services.AddTransient<NotificationPublisherBase<NotifiableContainerBase>, NotificationPublisher>();
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

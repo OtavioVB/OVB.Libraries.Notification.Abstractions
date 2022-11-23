@@ -1,10 +1,11 @@
-﻿using OVB.Libraries.Notification.Abstractions.Consumer;
+﻿using OVB.Libraries.Notification.Abstractions;
+using OVB.Libraries.Notification.Abstractions.Consumer;
 
 namespace OVB.Libraries.Notification.Sample.Models;
 
-public class NotificationConsumer : NotificationConsumerBase<NotificationContainer>
+public class NotificationConsumer : NotificationConsumerBase<NotifiableContainerBase>
 {
-    public NotificationConsumer(NotificationContainer notifiableContainer) : base(notifiableContainer)
+    public NotificationConsumer(NotifiableContainerBase notifiableContainer) : base(notifiableContainer)
     {
     }
 }

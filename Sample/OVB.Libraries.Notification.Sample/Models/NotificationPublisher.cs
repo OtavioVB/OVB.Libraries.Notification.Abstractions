@@ -1,10 +1,11 @@
-﻿using OVB.Libraries.Notification.Abstractions.Publisher;
+﻿using OVB.Libraries.Notification.Abstractions;
+using OVB.Libraries.Notification.Abstractions.Publisher;
 
 namespace OVB.Libraries.Notification.Sample.Models;
 
-public class NotificationPublisher : NotificationPublisherBase<NotificationContainer>
+public class NotificationPublisher : NotificationPublisherBase<NotifiableContainerBase>
 {
-    public NotificationPublisher(NotificationContainer notifiable) : base(notifiable)
+    public NotificationPublisher(NotifiableContainerBase notifiable) : base(notifiable)
     {
     }
 }
